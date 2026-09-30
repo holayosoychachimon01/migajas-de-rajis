@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Migajas: novela visual</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Migajas: Novela Visual Interactiva</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main><div id="app"></div></main>
-<script src="script.js"></script>
+  <main>
+    <div id="app"></div>
+  </main>
+
+  <!-- Modal para Cargar Imágenes del Usuario -->
+  <div id="img-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📷 Personalizar Imágenes</h2>
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+      </div>
+      <p class="sub">Sube tus propios archivos de imagen desde tu dispositivo para personalizar escenarios y personajes.</p>
+
+      <div class="upload-grid">
+        <div class="upload-section">
+          <h3>Escenarios / Fondos</h3>
+          <div class="upload-item">
+            <label>Calle (Esperando):</label>
+            <input type="file" id="up-bg-calle" accept="image/*">
+          </div>
+          <div class="upload-item">
+            <label>Noche / Salida:</label>
+            <input type="file" id="up-bg-noche" accept="image/*">
+          </div>
+          <div class="upload-item">
+            <label>Día / Tarde:</label>
+            <input type="file" id="up-bg-dia" accept="image/*">
+          </div>
+          <div class="upload-item">
+            <label>Cuarto de Rajis:</label>
+            <input type="file" id="up-bg-cuarto" accept="image/*">
+          </div>
+        </div>
+
+        <div class="upload-section">
+          <h3>Personajes (Avatares)</h3>
+          <div class="upload-item">
+            <label>Rajis:</label>
+            <input type="file" id="up-char-Rajis" accept="image/*">
+          </div>
+          <div class="upload-item">
+            <label>Chava:</label>
+            <input type="file" id="up-char-Chava" accept="image/*">
+          </div>
+          <div class="upload-item">
+            <label>Oliver:</label>
+            <input type="file" id="up-char-Oliver" accept="image/*">
+          </div>
+          <div class="upload-item">
+            <label>Chachis:</label>
+            <input type="file" id="up-char-Chachis" accept="image/*">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="reset-imgs-btn" class="btn-danger">Restablecer a colores por defecto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Historial -->
+  <div id="log-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📜 Historial de Diálogo</h2>
+        <button id="close-log-btn" class="close-btn">&times;</button>
+      </div>
+      <div id="log-body" class="log-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
